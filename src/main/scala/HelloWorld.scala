@@ -5,7 +5,7 @@ object HelloWorld {
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf().
       setMaster("local").
-      setAppName("LearnScalaSpark")
+      setAppName("RddJsonExampleScala")
     val sc = new SparkContext(conf)
     sc.setLogLevel("ERROR")
 
