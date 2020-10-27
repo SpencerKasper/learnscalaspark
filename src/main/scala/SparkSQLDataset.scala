@@ -17,6 +17,6 @@ object SparkSQLDataset {
     purchasesDF
       .join(accountsDF, "accountId")
       .where(col("name") === "Spencer Kasper")
-      .show()
+      .write.parquet("just-spencer.parquet")
   }
 }
