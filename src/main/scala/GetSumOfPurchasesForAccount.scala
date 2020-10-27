@@ -1,5 +1,5 @@
-import org.apache.spark.sql.DataFrame
-import org.apache.spark.sql.functions.{avg, col, desc, max, sum}
+import columns.{Accounts, Purchases}
+import org.apache.spark.sql.functions.{col, desc, sum}
 
 object GetSumOfPurchasesForAccount {
 
@@ -13,11 +13,11 @@ object GetSumOfPurchasesForAccount {
     val accountsDF = spark.read.parquet("parquet\\accounts.parquet")
 
     accountsDF
-      .join(prunedPurchasesDF, prunedPurchasesDF("p_accountId") === accountsDF("accountId"), "left_outer")
-      .groupBy("name", "accountId")
-      .agg(sum("amount").alias("amount"))
+      .join(prunedPurchasesDF, prunedPurchasesDF("p_accountId") === accountsDF(Accounts.AccountId), "left_outer")
+      .groupBy(Accounts.Name, Accounts.AccountId)
+      .agg(sum(Purchases.Amount).alias(Purchases.Amount))
       .na.fill(0)
-      .orderBy(desc("amount"))
+      .orderBy(desc(Purchases.Amount))
       .show()
   }
 }
