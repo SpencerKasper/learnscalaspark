@@ -1,7 +1,7 @@
 import org.apache.spark.{SparkConf, SparkContext}
 import scala.util.parsing.json._
 
-object PurchasesByAccount {
+object ThisDoesNotSeemToBeTheWayToGo {
   def main(args: Array[String]): Unit = {
     println("start")
     val conf = new SparkConf().

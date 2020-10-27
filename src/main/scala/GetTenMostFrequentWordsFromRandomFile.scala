@@ -1,6 +1,6 @@
 import org.apache.spark.{SparkConf, SparkContext}
 
-object HelloWorld {
+object GetTenMostFrequentWordsFromRandomFile {
 
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf().

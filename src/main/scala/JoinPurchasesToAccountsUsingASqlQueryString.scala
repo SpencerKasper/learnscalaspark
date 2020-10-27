@@ -1,6 +1,6 @@
 import org.apache.spark.sql.SparkSession
 
-object SparkSQLReadingParquetIntoDataFrame {
+object JoinPurchasesToAccountsUsingASqlQueryString {
 
   def main(args: Array[String]): Unit = {
     val spark = new Spark("sparkSqlTest").get()
