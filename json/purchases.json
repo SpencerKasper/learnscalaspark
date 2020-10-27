@@ -1,0 +1,8 @@
+{"purchaseId":  1, "purchaseTime": "00:00:00", "accountId": 1, "amount": 20.0}
+{"purchaseId":  2, "purchaseTime": "00:00:00", "accountId": 1, "amount": 1.04}
+{"purchaseId":  3, "purchaseTime": "00:00:00", "accountId": 2, "amount": 4.30}
+{"purchaseId":  4, "purchaseTime": "00:00:00", "accountId": 2, "amount": 5.3}
+{"purchaseId":  5, "purchaseTime": "00:00:00", "accountId": 1}
+{"purchaseId":  6, "purchaseTime": "00:00:00", "accountId": 2, "amount": 0.0}
+
+

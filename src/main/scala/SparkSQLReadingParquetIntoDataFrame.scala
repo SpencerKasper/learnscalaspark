@@ -10,8 +10,8 @@ object SparkSQLReadingParquetIntoDataFrame {
       .getOrCreate()
     spark.conf.set("spark.sql.crossJoin.enabled", true)
     import spark.implicits._
-    val purchasesDF = spark.read.parquet("purchases.parquet")
-    val accountsDF = spark.read.parquet("accounts.parquet")
+    val purchasesDF = spark.read.parquet("parquet\\purchases.parquet")
+    val accountsDF = spark.read.parquet("parquet\\accounts.parquet")
 
     purchasesDF.createOrReplaceTempView("purchases")
     accountsDF.createOrReplaceTempView("accounts")

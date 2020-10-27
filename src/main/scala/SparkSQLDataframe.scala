@@ -1,7 +1,7 @@
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions.col
 
-object SparkSQLDataset {
+object SparkSQLDataframe {
 
   def main(args: Array[String]): Unit = {
     val spark = SparkSession
@@ -9,12 +9,11 @@ object SparkSQLDataset {
       .appName("Spark SQL basic example")
       .config("spark.master", "local")
       .getOrCreate()
-    spark.conf.set("spark.sql.crossJoin.enabled", true)
     import spark.implicits._
-    val purchasesDF = spark.read.parquet("purchases.parquet")
-    val accountsDF = spark.read.parquet("accounts.parquet")
+    val purchasesDF = spark.read.parquet("parquet\\purchases.parquet")
+    val accountsDF = spark.read.parquet("parquet\\accounts.parquet")
 
-    purchasesDF
+     purchasesDF
       .join(accountsDF, "accountId")
       .where(col("name") === "Spencer Kasper")
       .write.parquet("just-spencer.parquet")
