@@ -8,7 +8,7 @@ object JsonToParquet {
       .config("spark.master", "local")
       .getOrCreate()
 
-    val fileDF = spark.read.json("json\\purchases.json")
-    fileDF.write.parquet("parquet\\purchases.parquet")
+    val fileDF = spark.read.json("json\\non-flat-file.json")
+    fileDF.write.parquet("parquet\\non-flat-file.parquet")
   }
 }
